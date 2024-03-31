@@ -14,3 +14,4 @@ jobs:
         with:
           go_version_file: go.mod
           fail_on_error: true
+          golangci_lint_flags: "--config=.github/.golangci.yml ./testdata"
