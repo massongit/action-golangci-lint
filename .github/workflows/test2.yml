@@ -10,7 +10,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: git diff origin/${{ github.base_ref }}...origin/${{ github.head_ref }}
+      - run: echo git diff origin/$BASE_REF...origin/$HEAD_REF
+      - run: git diff origin/$BASE_REF...origin/$HEAD_REF
       - uses: reviewdog/action-golangci-lint@v2.6.1
         with:
           go_version_file: go.mod
