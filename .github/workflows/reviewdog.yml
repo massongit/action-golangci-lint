@@ -21,7 +21,7 @@ jobs:
           github_token: ${{ secrets.github_token }}
           level: warning
           golangci_lint_version: ${{ matrix.golangci-lint-version == 'v1' && 'v1.64.8' || 'latest' }}
-          golangci_lint_flags: "--config=.github/.golangci.${{ matrix.golangci-lint-version }}.yml --new-from-rev=${{ github.base_ref }} ./testdata"
+          golangci_lint_flags: "--config=.github/.golangci.${{ matrix.golangci-lint-version }}.yml --new-from-rev=origin/${{ github.base_ref }} ./testdata"
 
   golangci-lint-platform:
     name: runner / golangci-lint-platform
